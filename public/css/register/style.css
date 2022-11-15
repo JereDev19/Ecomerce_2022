@@ -1,0 +1,128 @@
+/*-------------------------------------------------------------Register----------------------------------------------------------*/
+
+.modal-body{
+  background: rgb(248, 248, 248);
+}
+
+#mensajeLogin{
+  font-weight: 700;
+}
+
+.formulario__labelLR {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-inputLR {
+	position: relative;
+}
+
+.formulario__inputLR {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__inputLR:focus{
+  border: 3px solid var(--Segundo);
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-errorLR {
+	font-size: 12px;
+	margin-bottom: 0;
+  margin-left: 4px;
+  margin-top: 2px;
+	display: none;
+}
+
+.formulario__input-error-activoLR {
+	display: block;
+}
+
+.formulario__validacion-estadoLR {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkboxLR {
+	margin-right: 10px;
+}
+
+.formulario__mensajeLR {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+}
+
+
+.formulario__grupo-btn-enviarLR {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btnLR {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: var(--Tercero);
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: 300ms ease all;
+}
+
+.formulario__btnLR:hover {
+	box-shadow: 3px 0px 20px rgba(180,180,180, 10);
+}
+
+.formulario__mensaje-exitoLR {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correctoLR .formulario__validacion-estadoLR {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrectoLR .formulario__labelLR {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrectoLR .formulario__validacion-estadoLR {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrectoLR .formulario__inputLR {
+	border: 3px solid #bb2929;
+}
+
+.formulario_mensaje-success{
+  background: #1ed12d;
+}
+
+.display-none{
+  display: none;
+}

@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+:root{
+  /* Paleta de colores - Variables de colores */
+
+  --Primero: #145DA0;
+  --Segundo: #00827f;
+  --Tercero: #22485d;
+  --Cuarto: #809d99;
+  --Quinto: #f3f6ee;
+}
+
+.primary-text{
+  color: var(--Primero);
+}
+
+.second-text{
+  color: var(--Segundo);
+}
+
+.primary-bg{
+  background-color: var(--Tercero);
+}
+
+.secondary-bg{
+  background-color: var(--Cuarto);
+}
+
+.rounded-full{
+  border-radius: 100%;
+}
+
+#wrapper{
+  overflow-x: hidden;
+  background-color: var(--Quinto);
+}
+
+#sidebar-wrapper{
+  min-height: 100vh;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-handing{
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group{
+  width: 15rem;
+}
+
+#page-content-wrapper{
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+  margin-left: 0;
+}
+
+#menu-toggle{
+  cursor: pointer;
+}
+
+#i{
+  padding-top: 2rem;
+}
+
+
+.list-group-item{
+  border: none;
+  padding: 20px 30px;
+}
+
+.list-group-item.active{
+  background-color: transparent;
+  color: var(--Segundo);
+  font-weight: bold;
+  border: none;
+}
+
+
+/*Estrellas*/
+
+
+
+@media (min-width: 768px){
+
+  #wrapper.toggled #sidebar-wrapper{
+    margin-left: -15rem;
+  }
+}
+
+
+
+@media (max-width: 768px){
+
+  #wrapper.toggled #sidebar-wrapper{
+    margin-left: -15rem;
+  }
+
+  #title-panel {
+    font-size: 20px;
+  }
+}
+
+
+
+@media (max-width: 566px){
+
+  #wrapper.toggled #sidebar-wrapper{
+    margin-left: -15rem;
+  }
+}
+
+
+
+
+
+
+/*------------------------Final de Pupup--------------------*/
+
+#logo {
+  margin-top: 10rem;
+}

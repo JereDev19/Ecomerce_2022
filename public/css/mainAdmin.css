@@ -1,0 +1,169 @@
+body{
+  margin-top: 5.5rem;
+  font-family: 'Poppins' sans-serif;
+}
+
+:root{
+  /* Paleta de colores - Variables de colores */
+
+  --Primero: #145DA0;
+  --Segundo: #00827f;
+  --Tercero: #22485d;
+  --Cuarto: #809d99;
+  --Quinto: #f3f6ee;
+}
+
+.primary-text{
+  color: var(--Primero);
+}
+
+.second-text{
+  color: var(--Segundo);
+}
+
+.primary-bg{
+  background-color: var(--Tercero);
+}
+
+.secondary-bg{
+  background-color: var(--Cuarto);
+}
+
+.rounded-full{
+  border-radius: 100%;
+}
+
+#wrapper{
+  overflow-x: hidden;
+  background-color: var(--Quinto);
+}
+
+#sidebar-wrapper{ /*Sin esto no funciona el dezplasamiento del mneu (responsive)*/
+  min-height: 100vh;
+	margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-handing{
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group{
+  width: 15rem;
+}
+
+#page-content-wrapper{
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+  margin-left: 0;
+}
+
+#menu-toggle{
+  cursor: pointer;
+}
+
+.list-group-item{
+  border: none;
+  padding: 20px 30px;
+}
+
+.list-group-item.active{
+  background-color: transparent;
+  color: var(--Segundo);
+  font-weight: bold;
+  border: none;
+}
+
+
+/*Estrellas*/
+
+
+
+@media (min-width: 1080px){
+  #sidebar-wrapper{
+    margin-left: 0;
+  }
+
+  #page-content-wrapper{
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper{
+    margin-left: -15rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  #ExitoPedido {
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+
+/*Estos estilos los hacemos para ocultar los label,inputs y botones en los forms de actualizar.
+    Ocultamos con tipo hidden los inputs, a los label y los botones le asignamos los id y le aplicamos la propiedad display none para que se oculten.
+    Al textarea lo ocultamos con la misma clase que el label, ya que con tipo hidden no se puede lograr.
+  - ¿Para que hacemos esto?.
+  - Para que si el ID que ingresa el usuario, es igual al que ya esta registrado en la BD, se desbloque los diferentes inputs. De lo contrario no pasará ya que     desarrollamos una validación para la seguridad del panel.
+*/
+
+
+/*User*/
+label.updateUserHidden, .updateUserHidden{
+  display: none;
+}
+
+/*Modulo*/
+#Actualizarmodulos #NameActualizarModulo,#BtnActualizarModulo{
+  display: none;
+}
+
+/*Permiso*/
+#Actualizarpermisos #NameActualizarPermiso,#BtnActualizarPermiso{
+  display: none;
+}
+
+/*------------------------Final de Pupup--------------------*/
+
+
+
+
+
+
+
+
+
+
+/*------------------------Estilos listas--------------------*/
+/*Subimos la lista de pedidos concretados*/
+
+#rowOrdersCon {
+  margin-top: -312px;
+}
+
+@media (max-width: 768px) {
+/*En esta resolucion, la lista de pedidos concretados se traskada hacia abajo*/
+  #rowOrdersCon {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 430px) {
+  #spanYbotons {
+    padding: 5px 8px 5px 8px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}

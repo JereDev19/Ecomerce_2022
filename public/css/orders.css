@@ -1,0 +1,575 @@
+body{
+  margin-top: 5.5rem;
+  font-family: 'Poppins' sans-serif;
+}
+
+:root{
+  /* Paleta de colores - Variables de colores */
+
+  --Primero: #145DA0;
+  --Segundo: #00827f;
+  --Tercero: #22485d;
+  --Cuarto: #809d99;
+  --Quinto: #f3f6ee;
+}
+
+.primary-text{
+  color: var(--Primero);
+}
+
+.second-text{
+  color: var(--Segundo);
+}
+
+.primary-bg{
+  background-color: var(--Tercero);
+}
+
+.secondary-bg{
+  background-color: var(--Cuarto);
+}
+
+.rounded-full{
+  border-radius: 100%;
+}
+
+#wrapper{
+  overflow-x: hidden;
+  background-color: var(--Quinto);
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-handing{
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group{
+  width: 15rem;
+}
+
+#page-content-wrapper{
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+  margin-left: 0;
+}
+
+#menu-toggle{
+  cursor: pointer;
+}
+
+#i{
+  padding-top: 2rem;
+}
+
+
+.list-group-item{
+  border: none;
+  padding: 20px 30px;
+}
+
+.list-group-item.active{
+  background-color: transparent;
+  color: var(--Segundo);
+  font-weight: bold;
+  border: none;
+}
+
+
+/*Estrellas*/
+
+
+@media (min-width: 764px){
+  #sidebar-wrapper{
+    margin-left: 0;
+  }
+
+  #page-content-wrapper{
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper{
+    margin-left: -15rem;
+  }
+}
+
+
+
+
+/*Estos estilos los hacemos para ocultar los label,inputs y botones en los forms de actualizar.
+    Ocultamos con tipo hidden los inputs, a los label y los botones le asignamos los id y le aplicamos la propiedad display none para que se oculten.
+    Al textarea lo ocultamos con la misma clase que el label, ya que con tipo hidden no se puede lograr.
+  - ¿Para que hacemos esto?.
+  - Para que si el ID que ingresa el usuario, es igual al que ya esta registrado en la BD, se desbloque los diferentes inputs. De lo contrario no pasará ya que     desarrollamos una validación para la seguridad del panel.
+*/
+
+/*Producto*/
+label.updateProductHidden, .updateProductHidden{
+  display: none;
+}
+
+/*Ingrediente*/
+label.updateIngredientHidden, .updateIngredientHidden{
+  display: none;
+}
+
+/*Receta*/
+label.updateRecipeHidden, .updateRecipeHidden{
+  display: none;
+}
+
+/*Pedido*/
+label.updateOrderHidden, .updateOrderHidden{
+  display: none;
+}
+
+/*Evento*/
+label.updateEventHidden, .updateEventHidden{
+  display: none;
+}
+
+/*Insumo*/
+#ActualizarInsumo #NameActualizarInsumo, #BtnActualizarInsumo{
+  display: none;
+}
+
+/*Saldo insumo*/
+#ActualizarSaldoInsumo #NameActualizarSaldoInsumo, #BtnActualizarSaldoInsumo{
+  display: none;
+}
+
+/*Receta*/
+#ActualizarReceta #NameActualizarReceta, #BtnActualizarReceta{
+  display: none;
+}
+
+/*Pedido*/
+#ActualizarPedido #NameActualizarPedido, #BtnActualizarPedido{
+  display: none;
+}
+
+/*Evento*/
+#ActualizarEvento #NameActualizarEvento, #BtnActualizarEvento{
+  display: none;
+}
+
+/*HIOJAM*/
+#products {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#products td, #products th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#products tr:nth-child(even){background-color: #f2f2f2;}
+
+#products tr:hover {background-color: #ddd;}
+
+#products th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+/*FIN HIOJAM*/
+/*------------------------Final de Pupup--------------------*/
+
+
+
+
+
+
+
+
+
+
+/*------------------------Estilos para validación en JS en orders---------------*/
+
+#modal-body{
+  background-color: rgb(240, 240, 240);
+}
+
+
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario__grupo-input {
+	position: relative;
+}
+
+.formulario__input {
+	width: 100%;
+	background: #fff;
+	border: 3px solid transparent;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.formulario__input:focus {
+  border: 3px solid var(--Segundo);
+  outline: none;
+  box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+
+.formulario__input-error {
+	font-size: 14px;
+	margin-bottom: 0;
+  margin-left: 4px;
+  margin-top: 2px;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+
+.formulario__mensaje p {
+	margin: 0;
+}
+
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background: var(--Tercero);
+	color: #fff;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: 300ms ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 20px rgba(180,180,180, 10);
+}
+
+.formulario_mensajeHiojam{
+  height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+  display: block;
+}
+
+.display-none{
+  display: none;
+}
+
+.formulario_mensaje_success{
+  background: #1ed12d;
+}
+
+/*-------------Añadir---------------*/
+
+
+
+/*Estilos determinados para que los mensajes de form de modulo se muestre   - AÑADIR - Productos*/
+
+.formulario__mensaje-exitoAdProduct {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exito-activoAdProduct {
+	display: block;
+}
+
+
+
+/*Estilos determinados para que los mensajes de form de modulo se muestre   - AÑADIR - Ingredientes*/
+
+.formulario__mensaje-exitoAdIngredient {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exito-activoAdIngredient {
+	display: block;
+}
+
+
+
+
+/*Estilos determinados para que los mensajes de form de modulo se muestre   - AÑADIR - Receta*/
+
+.formulario__mensaje-exitoAdRecipe {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exito-activoAdRecipe {
+	display: block;
+}
+
+
+
+/*Estilos determinados para que los mensajes de form de modulo se muestre   - AÑADIR - Pedido*/
+
+.formulario__mensaje-exitoAdOrders {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exito-activoAdOrders {
+	display: block;
+}
+
+
+
+/*Estilos determinados para que los mensajes de form de modulo se muestre   - AÑADIR - Evento*/
+
+.formulario__mensaje-exitoAdEvento {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exitoactivoAdEvento {
+	display: block;
+}
+
+
+
+
+
+/*-------------- Remover ---------------*/
+
+
+/*--------- Remover producto*/
+.formulario__mensaje-exitoRemoverProducto {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exitoactivoRemoverProducto {
+  display: block;
+}
+
+/*--------- Remover Ingrediente*/
+.formulario__mensaje-exitoRemoverIngrediente {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoRemoverIngrediente {
+  display: block;
+}
+
+/*---------- Remover Receta*/
+.formulario__mensaje-exitoRemoverReceta {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exitoactivoRemoverReceta {
+  display: block;
+}
+
+/*----------- Remover Pedido*/
+.formulario__mensaje-exitoRemoverPedido {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+
+.formulario__mensaje-exitoactivoRemoverPedido {
+  display: block;
+}
+
+/*----------- Remover Eventos*/
+.formulario__mensaje-exitoRemoverEvento {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoRemoverEvento {
+  display: block;
+}
+
+
+
+/*-------------- Actualizar ---------------*/
+
+/*----------- Actualizar producto */
+.formulario__mensaje-exitoActualizarProducto {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoActualizarProducto {
+  display: block;
+}
+
+/*----------- Actualizar ingrediente */
+.formulario__mensaje-exitoActualizarIngredient {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoActualizarIngredient {
+  display: block;
+}
+
+/*----------- Actualizar receta */
+.formulario__mensaje-exitoActualizarReceta {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoActualizarReceta {
+  display: block;
+}
+
+/*----------- Actualizar pedidos */
+.formulario__mensaje-exitoActualizarPedido {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoActualizarPedido {
+  display: block;
+}
+
+/*----------- Actualizar eventos */
+.formulario__mensaje-exitoActualizarEvento {
+  font-size: 14px;
+	color: #119200;
+	display: none;
+  margin-top: 1rem;
+}
+.formulario__mensaje-exitoactivoActualizarEvento {
+  display: block;
+}
+
+
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+
+#btnListarPedidos {
+  padding-bottom: 5rem;
+}
+
+.hoverable{
+  cursor: pointer;
+}
+
+/*! nombres del input ingresado - movimiento hacia la derecha*/
+#updateProductIdParagraph {
+  margin-left: 8rem;
+}
+
+#updateIngredientIdParagraph {
+  margin-left: 8rem;
+}
+
+#updateRecipeIdParagraph {
+  margin-left: 14rem;
+}
+
+#updateOrderIdParagraph {
+  margin-left: 14rem;
+}
+
+#updateEventIdParagraph {
+  margin-left: 8rem;
+}
+
+.formulario_mensaje-success{
+  background: #1ed12d;
+}

@@ -1,0 +1,302 @@
+                                             /*-------------------------Estilos Generales-------------------------*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--sm-font);
+}
+
+
+
+/*  TODOS:   ESTILOS HEADER */
+
+header{
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  background: #fff;
+  box-shadow: 1px 1px 3px 0px #00000020;
+  transition: all 600ms;
+}
+
+#cart-container{
+  margin-left: -10.5rem;
+}
+
+header .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .logo img{
+  width: 50px;
+ }
+
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link{
+  font-weight: 500;
+}
+
+.navbar-brand img{
+  width: 30px;
+}
+
+.navbar-brand span{
+  letter-spacing: 2px;
+  font-family: var(--sm-font);
+}
+
+.nav-link:hover{
+  color: var(--Primero)!important;
+}
+
+.nav-item{
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+#StylesProducto {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 20px;
+  border-bottom: solid 1px #aaa;
+}
+
+#StylesUl {
+  margin: 0;
+  padding: 0;
+}
+
+#StylesButtonCarro {
+  width: 300px;
+}
+
+#Carro {
+  width: 100%;
+  height: 60px;
+}
+
+
+/*Iconos*/
+
+header i{
+  transition: all 500ms;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+header i:hover{
+  color: var(--Primero);
+}
+
+
+
+/*----Buscador - Estilos----*/
+
+#icono-busqueda{
+  color: #282828;
+  transition: all 300ms;
+}
+
+#icono-busqueda:hover{
+  color: var(--Primero);
+}
+
+#contenedor_barra_busqueda{
+  position: fixed;
+  top: -80px; /*Lo ocultamos para darle funcionalidad*/
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  z-index: 9;
+  transition: all 600ms;
+}
+
+#contenedor_barra_busqueda input{
+  display: block;
+  width: 1200px;
+  margin: auto; 
+  padding: 10px;
+  font-size: 18px;
+  outline: 0;
+}
+
+#caja_busqueda{
+  position: fixed;
+  top: 163px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  background: #fff;
+  z-index: 8; 
+  display: none;
+}
+
+#caja_busqueda li{
+  list-style: none;
+  border-bottom: solid 1px #f4f4f4;
+}
+
+#caja_busqueda li a{
+  display: block;
+  color: #777777;
+  padding: 14px 0px 24px;
+  text-decoration: none;
+  width: 100%;
+}
+
+#caja_busqueda li a i {
+  margin-right: 15px;
+  color: #777777;
+}
+
+/*Fondo para sacar buscador*/
+#fondo{
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+}
+
+.formulario__mensaje{
+  height: 45px;
+	line-height: 45px;
+	background: #F66060;
+	padding: 0 15px;
+	border-radius: 3px;
+}
+
+.formulario_mensaje-success{
+  background: #1ed12d;
+}
+
+
+
+/*MENU - RESPONSIVE*/
+
+
+@media(max-width: 1400px){
+
+  #contenedor_barra_busqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+@media(max-width: 1200px){
+
+  header nav .icons i{
+    font-size: 15px;
+  }
+
+}
+
+
+@media screen and (max-width: 1220px){
+  #caja_busqueda {
+    width: 100%;
+  }
+}
+
+
+@media(min-width: 992px){
+
+  .nav-item{
+    border-bottom: none;
+  }
+  
+
+}
+
+@media(max-width: 770px){
+
+  header .icons{
+    padding-left: 30px;
+    transition: all 300ms;
+  }
+
+  header .logo img{
+    width: 45px;
+    height: 45px;
+   }
+
+}
+
+@media(max-width: 452px){
+
+  header{
+    height: 80px;
+    transition: all 600ms;
+  }
+
+  header .logo img{
+    display: none;
+  }
+  
+  #contenedor_barra_busqueda{
+    top: -14px;
+  }
+
+  #caja_busqueda {
+    width: 100%;
+  }
+}
+
+
+
+@media(max-width: 409px){
+
+    header{
+      height: 80px;
+      transition: all 600ms;
+    }
+
+    #contenedor_barra_busqueda{
+      margin-top: -14px;
+    }
+
+    #caja_busqueda {
+      width: 100%;
+      top: 13rem;
+    }
+
+}
+
+/*----------------------------------------------------------FIN DE MENU--------------------------------------------------------*/
+
+
+
+#Slider-Carrito {
+  height: 25rem;
+}
+
+#contenedorCarr p {
+  font-size: 20px;
+}
+
+#Slider-Carrito #contenedorCarr {
+  margin-top: 6rem;
+}
+
+#contenedorInfoProduct {
+  margin-left: 20rem;
+}
+
+#totalOrder {
+  margin-top: 8rem;
+  padding-bottom: 5rem;
+}
